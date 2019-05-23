@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/image_item_view"
+            android:layout_width="92dp"
+            android:layout_height="101dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="centerCrop"
+            android:text="image" />
+
+        <ImageView
+            android:id="@+id/favorito_nuevo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp" />
+
+        <TextView
+            android:id="@+id/titulo_item_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginRight="33dp"
+            android:layout_toStartOf="@+id/favorito_nuevo"
+            android:layout_toLeftOf="@+id/favorito_nuevo"
+            android:layout_toEndOf="@+id/image_item_view"
+            android:layout_toRightOf="@+id/image_item_view"
+            android:text="TextView" />
+    </RelativeLayout>
+</GridLayout>

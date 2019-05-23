@@ -1,0 +1,21 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/usuario">
+        <EditTextPreference
+            android:key="nombre_usuario"
+            android:title="Nombre de usuario">
+          </EditTextPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferencia_borrar_favoritos_header">
+        <Preference
+            android:defaultValue="false"
+            android:key="borrar_favoritos"
+            android:title="@string/button_reset_favorites"></Preference>
+        <Preference
+            android:defaultValue="false"
+            android:key="borrar_bd"
+            android:title="@string/button_delete_database"></Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

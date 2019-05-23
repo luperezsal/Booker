@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Booker</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_detalle">Detalle</string>
+    <string name="title_activity_busqueda">Búsqueda</string>
+    <string name="title_activity_ajustes">Búsqueda</string>
+
+
+
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="detalle">Detalle</string>
+    <string name="biblioteca">Biblioteca</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="ajustes">Ajustes</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="search">Search</string>
+    <string name="booker">Booker</string>
+
+
+    <string name="button_reset_favorites">Restaurar favoritos</string>
+    <string name="pref_default_button_reset_favorites">Restaurar favoritos</string>
+
+    <string name="button_delete_database">Restaurar app por defecto</string>
+
+
+
+
+
+    <string name="preferencia_borrar_favoritos_header">Restaurar favoritos</string>
+    <string name="preferencia_borrar_bd_header">Restaurar favoritos</string>
+    <string name="button_pref">button_pref</string>
+    <string name="usuario">Usuario</string>
+    <string name="nombre_usuario_preference">nombreUsuario</string>
+
+
+</resources>
