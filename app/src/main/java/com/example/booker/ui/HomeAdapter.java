@@ -15,9 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.booker.R;
 import com.example.booker.data.database.Publicacion;
-import com.example.booker.ui.detalle.DetalleActivity;
-
-import org.w3c.dom.Text;
+import com.example.booker.ui.Detail.DetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -145,7 +143,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeHolder> {
         @Override
         public void onClick(View v) {
             // Se asignan los atributos del parametro a la vista
-            Intent detalle = new Intent(mContext, DetalleActivity.class);
+            Intent detalle = new Intent(mContext, DetailActivity.class);
             detalle.putExtra("id", id);
             System.out.println("Start activity con id: " + id);
             mContext.startActivity(detalle);

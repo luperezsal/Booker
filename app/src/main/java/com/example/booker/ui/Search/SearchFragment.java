@@ -1,4 +1,4 @@
-package com.example.booker.ui.busqueda;
+package com.example.booker.ui.Search;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
@@ -24,10 +24,10 @@ import com.example.booker.R;
 import com.example.booker.ui.HomeAdapter;
 import com.example.booker.utils.InjectorUtils;
 
-public class BusquedaFragment extends Fragment {
+public class SearchFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private BusquedaActivityViewModel mBusquedaViewModel;
+    private SearchActivityViewModel mBusquedaViewModel;
     private HomeAdapter mBusquedaAdapter;
     NavigationView navigationView;
 
@@ -111,8 +111,8 @@ public class BusquedaFragment extends Fragment {
 
     private void loadItems(String nombre) {
         System.out.println("Buscando libros: " + nombre + " EN BUSQUEDA load items");
-        BusquedaViewModelFactory factory = InjectorUtils.provideBusquedaActivityViewModelFactory(getContext());
-        this.mBusquedaViewModel = ViewModelProviders.of(this, factory).get(BusquedaActivityViewModel.class);
+        SearchViewModelFactory factory = InjectorUtils.provideBusquedaActivityViewModelFactory(getContext());
+        this.mBusquedaViewModel = ViewModelProviders.of(this, factory).get(SearchActivityViewModel.class);
         this.mBusquedaViewModel.getPublicacionesNombre(nombre).observe(this, publicaciones -> {
             mBusquedaAdapter.actualizarLista(publicaciones);
             if (posicion == RecyclerView.NO_POSITION) {

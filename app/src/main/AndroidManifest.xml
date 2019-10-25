@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme.NoActionBar">
 
         <activity
-            android:name=".ui.home.MainActivity"
+            android:name=".ui.Home.MainActivity"
             android:label="@string/booker"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -26,19 +26,19 @@
         </activity>
 
         <activity
-            android:name=".ui.ajustes.AjustesActivity"
+            android:name=".ui.Settings.SettingsActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.home.MainActivity" />
+                android:value=".ui.Home.MainActivity" />
         </activity>
 
         <activity
-            android:name=".ui.detalle.DetalleActivity"
-            android:parentActivityName=".ui.home.MainActivity">
+            android:name=".ui.Detail.DetailActivity"
+            android:parentActivityName=".ui.Home.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.home.MainActivity" />
+                android:value=".ui.Home.MainActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.Detalle" />
                 <category android:name="android.intent.category.DEFAULT" />

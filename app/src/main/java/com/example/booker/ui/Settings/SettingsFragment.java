@@ -1,4 +1,4 @@
-package com.example.booker.ui.ajustes;
+package com.example.booker.ui.Settings;
 
 
 import android.app.FragmentManager;
@@ -12,9 +12,9 @@ import android.widget.Toast;
 import com.example.booker.R;
 import com.example.booker.utils.InjectorUtils;
 
-public class AjustesFragment extends PreferenceFragment {
+public class SettingsFragment extends PreferenceFragment {
     Context mContext;
-    AjustesFactory factory;
+    SettingsFactory factory;
 
 
     @Override

@@ -14,25 +14,30 @@
  * limitations under the License.
  */
 
-package com.example.booker.ui.home;
-
+package com.example.booker.ui.Detail;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
-
 import com.example.booker.data.PublicacionRepository;
 
-public class MainViewModelFactory extends ViewModelProvider.NewInstanceFactory {
+/**
+ * Factory method that allows us to create a ViewModel with a constructor that takes a
+ * {@link PublicacionRepository} and an ID for the current {@link com.example.booker.data.database.Publicacion}
+ */
+public class DetailViewModelFactory extends ViewModelProvider.NewInstanceFactory {
+
 
     private final PublicacionRepository mRepository;
+    private final String id;
 
-    public MainViewModelFactory(PublicacionRepository repository) {
+    public DetailViewModelFactory(PublicacionRepository repository, String id) {
         this.mRepository = repository;
+        this.id = id;
     }
 
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
         //noinspection unchecked
-        return (T) new MainActivityViewModel(mRepository);
+        return (T) new DetailViewModel(mRepository, id);
     }
 }

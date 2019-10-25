@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.booker.ui.home;
+package com.example.booker.ui.Favorites;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
@@ -25,9 +25,9 @@ import com.example.booker.data.database.Publicacion;
 import java.util.List;
 
 /**
- * {@link ViewModel} for {@link MainActivity}
+ * {@link ViewModel} for {@link FavoritesFragment}
  */
-class MainActivityViewModel extends ViewModel {
+class FavoritesViewModel extends ViewModel {
 
     // Weather forecast the user is looking at
     private final LiveData<List<Publicacion>> mPublicaciones;
@@ -36,9 +36,10 @@ class MainActivityViewModel extends ViewModel {
 
     private final PublicacionRepository mRepository;
 
-    public MainActivityViewModel(PublicacionRepository repository) {
+    public FavoritesViewModel(PublicacionRepository repository) {
         mRepository = repository;
-        mPublicaciones = mRepository.getPublicaciones();
+        System.out.println("VIEW MODEL FAVORITOS");
+        mPublicaciones = mRepository.getPublicacionesFavoritas();
     }
 
     public LiveData<List<Publicacion>> getmPublicaciones() {

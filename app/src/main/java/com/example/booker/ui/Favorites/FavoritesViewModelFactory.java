@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.booker.ui.favoritos;
+package com.example.booker.ui.Favorites;
 
 
 import android.arch.lifecycle.ViewModel;
@@ -22,17 +22,17 @@ import android.arch.lifecycle.ViewModelProvider;
 
 import com.example.booker.data.PublicacionRepository;
 
-public class FavoritosViewModelFactory extends ViewModelProvider.NewInstanceFactory {
+public class FavoritesViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
     private final PublicacionRepository mRepository;
 
-    public FavoritosViewModelFactory(PublicacionRepository repository) {
+    public FavoritesViewModelFactory(PublicacionRepository repository) {
         this.mRepository = repository;
     }
 
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
         //noinspection unchecked
-        return (T) new FavoritosActivityViewModel(mRepository);
+        return (T) new FavoritesViewModel(mRepository);
     }
 }

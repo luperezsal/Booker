@@ -1,4 +1,4 @@
-package com.example.booker.ui.favoritos;
+package com.example.booker.ui.Favorites;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
@@ -16,11 +16,11 @@ import com.example.booker.R;
 import com.example.booker.ui.HomeAdapter;
 import com.example.booker.utils.InjectorUtils;
 
-public class FavoritosFragment extends Fragment {
+public class FavoritesFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private HomeAdapter mHomeAdapter;
-    private FavoritosActivityViewModel mFavoritosViewMmodel;
+    private FavoritesViewModel mFavoritosViewMmodel;
     private int posicion; //PAra usarlo como apuntador para volver a la misma posicion cuando entremos en detalle
     NavigationView navigationView;
 
@@ -49,8 +49,8 @@ public class FavoritosFragment extends Fragment {
         // igual que el den ssun sain
 //        aqui se instancia el factory y otda la pesca
         System.out.println("En Load Items FAVORITOS");
-        FavoritosViewModelFactory factory = InjectorUtils.provideFavoritosViewModelFactory(getActivity().getApplicationContext());
-        this.mFavoritosViewMmodel = ViewModelProviders.of(this, factory).get(FavoritosActivityViewModel.class);
+        FavoritesViewModelFactory factory = InjectorUtils.provideFavoritosViewModelFactory(getActivity().getApplicationContext());
+        this.mFavoritosViewMmodel = ViewModelProviders.of(this, factory).get(FavoritesViewModel.class);
         this.mFavoritosViewMmodel.getmPublicaciones().observe(this, publicaciones -> {
             mHomeAdapter.actualizarLista(publicaciones);
             if (posicion == RecyclerView.NO_POSITION) {

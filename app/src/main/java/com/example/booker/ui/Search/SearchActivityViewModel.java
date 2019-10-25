@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-package com.example.booker.ui.busqueda;
+package com.example.booker.ui.Search;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 
 import com.example.booker.data.PublicacionRepository;
 import com.example.booker.data.database.Publicacion;
-import com.example.booker.ui.home.MainActivity;
+import com.example.booker.ui.Home.MainActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * {@link ViewModel} for {@link MainActivity}
  */
-class BusquedaActivityViewModel extends ViewModel {
+class SearchActivityViewModel extends ViewModel {
 
     // Weather forecast the user is looking at
     private LiveData<List<Publicacion>> mPublicaciones;
@@ -39,7 +38,7 @@ class BusquedaActivityViewModel extends ViewModel {
 
     private final PublicacionRepository mRepository;
 
-    public BusquedaActivityViewModel(PublicacionRepository repository) {
+    public SearchActivityViewModel(PublicacionRepository repository) {
         mRepository = repository;
         mPublicaciones = mRepository.getPublicacionesInicialesBusqueda();
     }

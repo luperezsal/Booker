@@ -1,20 +1,16 @@
-package com.example.booker.ui.ajustes;
+package com.example.booker.ui.Settings;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.example.booker.R;
 
 
-import java.util.List;
-
-
-public class AjustesActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     Toolbar toolbar;
 
@@ -23,9 +19,9 @@ public class AjustesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
         setupActionBar();
-        Fragment fragment = new AjustesFragment();
+        Fragment fragment = new SettingsFragment();
         System.out.println("Creando ajustes activity");
-        getFragmentManager().beginTransaction().add(R.id.fragment_container, new AjustesFragment()).commit();
+        getFragmentManager().beginTransaction().add(R.id.fragment_container, new SettingsFragment()).commit();
     }
 
     public void setupActionBar() {

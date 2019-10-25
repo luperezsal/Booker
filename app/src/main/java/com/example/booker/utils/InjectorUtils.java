@@ -23,11 +23,11 @@ import com.example.booker.AppExecutors;
 import com.example.booker.data.PublicacionRepository;
 import com.example.booker.data.database.PublicacionDatabase;
 import com.example.booker.data.network.PublicacionNetworkDataSource;
-import com.example.booker.ui.ajustes.AjustesFactory;
-import com.example.booker.ui.busqueda.BusquedaViewModelFactory;
-import com.example.booker.ui.detalle.DetalleViewModelFactory;
-import com.example.booker.ui.favoritos.FavoritosViewModelFactory;
-import com.example.booker.ui.home.MainViewModelFactory;
+import com.example.booker.ui.Settings.SettingsFactory;
+import com.example.booker.ui.Search.SearchViewModelFactory;
+import com.example.booker.ui.Detail.DetailViewModelFactory;
+import com.example.booker.ui.Favorites.FavoritesViewModelFactory;
+import com.example.booker.ui.Home.MainViewModelFactory;
 
 /**
  * Provides static methods to inject the various classes needed for Sunshine
@@ -49,9 +49,9 @@ public class InjectorUtils {
         AppExecutors executors = AppExecutors.getInstance();
         return PublicacionNetworkDataSource.getInstance(context.getApplicationContext(), executors);
     }
-    public static DetalleViewModelFactory provideDetalleViewModelFactory(Context context, String id) {
+    public static DetailViewModelFactory provideDetalleViewModelFactory(Context context, String id) {
         PublicacionRepository repository = provideRepository(context.getApplicationContext());
-        return new DetalleViewModelFactory(repository, id);
+        return new DetailViewModelFactory(repository, id);
     }
 
     public static MainViewModelFactory provideMainActivityViewModelFactory(Context context) {
@@ -59,18 +59,18 @@ public class InjectorUtils {
         return new MainViewModelFactory(repository);
     }
 
-    public static BusquedaViewModelFactory provideBusquedaActivityViewModelFactory(Context context) {
+    public static SearchViewModelFactory provideBusquedaActivityViewModelFactory(Context context) {
         PublicacionRepository repository = provideRepository(context.getApplicationContext());
-        return new BusquedaViewModelFactory(repository);
+        return new SearchViewModelFactory(repository);
     }
 
-    public static FavoritosViewModelFactory provideFavoritosViewModelFactory(Context context) {
+    public static FavoritesViewModelFactory provideFavoritosViewModelFactory(Context context) {
         PublicacionRepository repository = provideRepository(context.getApplicationContext());
-        return new FavoritosViewModelFactory(repository);
+        return new FavoritesViewModelFactory(repository);
     }
 
-    public static AjustesFactory provideAjustesFactory (Context context){
+    public static SettingsFactory provideAjustesFactory (Context context){
         PublicacionRepository repository = provideRepository(context.getApplicationContext());
-        return new AjustesFactory(repository, context);
+        return new SettingsFactory(repository, context);
     }
 }

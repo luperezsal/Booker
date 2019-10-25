@@ -1,17 +1,17 @@
-package com.example.booker.ui.ajustes;
+package com.example.booker.ui.Settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.booker.data.PublicacionRepository;
 
-public class AjustesFactory {
+public class SettingsFactory {
 
     private final PublicacionRepository mRepository;
     private final Context mContext;
     private SharedPreferences preferences;
 
-    public AjustesFactory(PublicacionRepository repository, Context context) {
+    public SettingsFactory(PublicacionRepository repository, Context context) {
         mRepository = repository;
         this.mContext = context;
         preferences = context.getSharedPreferences("credencial", Context.MODE_PRIVATE);

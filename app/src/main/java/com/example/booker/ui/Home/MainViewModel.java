@@ -14,30 +14,34 @@
  * limitations under the License.
  */
 
-package com.example.booker.ui.detalle;
+package com.example.booker.ui.Home;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
+
 import com.example.booker.data.PublicacionRepository;
+import com.example.booker.data.database.Publicacion;
+
+import java.util.List;
 
 /**
- * Factory method that allows us to create a ViewModel with a constructor that takes a
- * {@link PublicacionRepository} and an ID for the current {@link com.example.booker.data.database.Publicacion}
+ * {@link ViewModel} for {@link MainActivity}
  */
-public class DetalleViewModelFactory extends ViewModelProvider.NewInstanceFactory {
+class MainViewModel extends ViewModel {
 
+    // Weather forecast the user is looking at
+    private final LiveData<List<Publicacion>> mPublicaciones;
+
+    // Date for the weather forecast
 
     private final PublicacionRepository mRepository;
-    private final String id;
 
-    public DetalleViewModelFactory(PublicacionRepository repository, String id) {
-        this.mRepository = repository;
-        this.id = id;
+    public MainViewModel(PublicacionRepository repository) {
+        mRepository = repository;
+        mPublicaciones = mRepository.getPublicaciones();
     }
 
-    @Override
-    public <T extends ViewModel> T create(Class<T> modelClass) {
-        //noinspection unchecked
-        return (T) new DetalleActivityViewModel(mRepository, id);
+    public LiveData<List<Publicacion>> getmPublicaciones() {
+        return mPublicaciones;
     }
 }

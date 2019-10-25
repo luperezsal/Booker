@@ -1,4 +1,4 @@
-package com.example.booker.ui.detalle;
+package com.example.booker.ui.Detail;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
@@ -7,16 +7,16 @@ import com.example.booker.data.PublicacionRepository;
 import com.example.booker.data.database.Publicacion;
 
 /**
- * {@link ViewModel} for {@link DetalleActivity}
+ * {@link ViewModel} for {@link DetailActivity}
  */
-public class DetalleActivityViewModel extends ViewModel {
+public class DetailViewModel extends ViewModel {
 
     // Weather forecast the user is looking at
     private final LiveData<Publicacion> mPublicacion;
     private final String id;
     private final PublicacionRepository mRepository;
 
-    public DetalleActivityViewModel(PublicacionRepository repository, String id) {
+    public DetailViewModel(PublicacionRepository repository, String id) {
         mRepository = repository;
         this.id = id;
         mPublicacion = mRepository.getPublicacionId(id);

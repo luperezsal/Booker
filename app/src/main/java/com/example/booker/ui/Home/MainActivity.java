@@ -1,12 +1,9 @@
-package com.example.booker.ui.home;
+package com.example.booker.ui.Home;
 
-import android.app.FragmentTransaction;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,17 +11,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.booker.R;
 import com.example.booker.ui.HomeAdapter;
-import com.example.booker.ui.ajustes.AjustesActivity;
-import com.example.booker.ui.ajustes.AjustesFragment;
-import com.example.booker.ui.busqueda.BusquedaFragment;
-import com.example.booker.ui.favoritos.FavoritosFragment;
+import com.example.booker.ui.Settings.SettingsActivity;
+import com.example.booker.ui.Search.SearchFragment;
+import com.example.booker.ui.Favorites.FavoritesFragment;
 import com.example.booker.utils.CargarPreferencias;
 import com.example.booker.utils.InjectorUtils;
 
@@ -32,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private RecyclerView mRecyclerView;
     private HomeAdapter mHomeAdapter;
-    private MainActivityViewModel mMainViewMmodel;
+    private MainViewModel mMainViewMmodel;
     private int posicion; //PAra usarlo como apuntador para volver a la misma posicion cuando entremos en detalle
     NavigationView navigationView;
     DrawerLayout drawer;
@@ -126,20 +121,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.favoritos_menu_desplegable:
                 toolbar.setTitle(R.string.favoritos);
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FavoritosFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FavoritesFragment()).commit();
                 break;
 
             case R.id.busqueda_menu_desplegable:
                 System.out.println("Pulsada activity_busqueda");
                 toolbar.setTitle(R.string.title_activity_busqueda);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new BusquedaFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SearchFragment()).commit();
 
                 break;
 
             case R.id.ajustes_menu_desplegable:
                 System.out.println("Pulsado ajustes");
                 System.out.println("Pulsado ajustes");
-                Intent intentAjustes = new Intent(this, AjustesActivity.class);
+                Intent intentAjustes = new Intent(this, SettingsActivity.class);
                 this.startActivity(intentAjustes);
                 break;
         }
@@ -164,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        aqui se instancia el factory y otda la pesca
         System.out.println("En Load Items");
         MainViewModelFactory factory = InjectorUtils.provideMainActivityViewModelFactory(this.getApplicationContext());
-        this.mMainViewMmodel = ViewModelProviders.of(this, factory).get(MainActivityViewModel.class);
+        this.mMainViewMmodel = ViewModelProviders.of(this, factory).get(MainViewModel.class);
         this.mMainViewMmodel.getmPublicaciones().observe(this, publicaciones -> {
             mHomeAdapter.actualizarLista(publicaciones);
             if (posicion == RecyclerView.NO_POSITION) {

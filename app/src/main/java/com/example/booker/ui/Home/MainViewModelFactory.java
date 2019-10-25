@@ -14,35 +14,25 @@
  * limitations under the License.
  */
 
-package com.example.booker.ui.favoritos;
+package com.example.booker.ui.Home;
 
-import android.arch.lifecycle.LiveData;
+
 import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProvider;
 
 import com.example.booker.data.PublicacionRepository;
-import com.example.booker.data.database.Publicacion;
 
-import java.util.List;
-
-/**
- * {@link ViewModel} for {@link FavoritosFragment}
- */
-class FavoritosActivityViewModel extends ViewModel {
-
-    // Weather forecast the user is looking at
-    private final LiveData<List<Publicacion>> mPublicaciones;
-
-    // Date for the weather forecast
+public class MainViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
     private final PublicacionRepository mRepository;
 
-    public FavoritosActivityViewModel(PublicacionRepository repository) {
-        mRepository = repository;
-        System.out.println("VIEW MODEL FAVORITOS");
-        mPublicaciones = mRepository.getPublicacionesFavoritas();
+    public MainViewModelFactory(PublicacionRepository repository) {
+        this.mRepository = repository;
     }
 
-    public LiveData<List<Publicacion>> getmPublicaciones() {
-        return mPublicaciones;
+    @Override
+    public <T extends ViewModel> T create(Class<T> modelClass) {
+        //noinspection unchecked
+        return (T) new MainViewModel(mRepository);
     }
 }

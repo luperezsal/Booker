@@ -1,4 +1,4 @@
-package com.example.booker.ui.detalle;
+package com.example.booker.ui.Detail;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
@@ -15,9 +15,9 @@ import com.example.booker.data.database.Publicacion;
 import com.example.booker.databinding.ActivityDetalleBinding;
 import com.example.booker.utils.InjectorUtils;
 
-public class DetalleActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
     private ActivityDetalleBinding mDetailBinding;
-    private DetalleActivityViewModel mViewModel;
+    private DetailViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,8 @@ public class DetalleActivity extends AppCompatActivity {
 
         mDetailBinding = DataBindingUtil.setContentView(this, R.layout.activity_detalle);
 
-        DetalleViewModelFactory factory = InjectorUtils.provideDetalleViewModelFactory(this.getApplicationContext(), id);
-        mViewModel = ViewModelProviders.of(this, factory).get(DetalleActivityViewModel.class);
+        DetailViewModelFactory factory = InjectorUtils.provideDetalleViewModelFactory(this.getApplicationContext(), id);
+        mViewModel = ViewModelProviders.of(this, factory).get(DetailViewModel.class);
 
         mViewModel.getPublicacion().observe(this, publicacion -> {
             // If the weather forecast details change, update the UI
